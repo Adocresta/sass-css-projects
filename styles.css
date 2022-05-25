@@ -1,3 +1,98 @@
-h1 {
-    color: purple;
+/* universal selector 
+
+* {}  
+
+*/
+body {
+    background-color: #ced0ce;
+}
+
+h1, h2 {
+    color: #191919;
+    /* text-shadow: 5px -5px 0px rgba(0, 0, 0, 0.3); */
+    text-align: center;
+    /* we can also use 100 200 300 400 is normal 700 is bold usually but it changes depending on the font */
+    /* !FONT important */
+    font-weight: 400 ; 
+    /* underline,line throught, overline we can control a lot and customize it*/
+    text-decoration: #E6E8E6 underline wavy ;
+
+}
+
+
+/* two at the same time */
+input
+{
+    color: teal;
+    background-color: antiquewhite ;
+}
+
+p  {
+    background-color: #e6e8e6;
+    color: #191919;
+    /* spacing between text */
+    line-height: 1.5 ;
+    letter-spacing: 3px;
+    /* Relative and absolote units */
+    /* !absolute ones = px pixel, */
+    font-size: 16px;
+    /* font are not easy */
+    /* first choise and second choice */
+    font-family: sans-serif;
+}
+
+a {
+    /* super cool thing otherwise it's so ugly */
+    text-decoration: none;
+}
+/* class */
+.navClass {
+    display: flex; justify-content: flex-end
+}
+/* id */
+#signupbutton {
+    background-color: #191919;
+    color: #ced0ce;
+}
+
+li{
+    color: blue;
+}
+
+.done {
+    color: grey;
+}
+
+#clear{
+    background-color: red;
+    color: white;
+}
+
+.testFunctions{
+    border: 1px solid rgb(255, 255, 255); 
+}
+
+/* descendent selector */
+/* all a tags inside li */
+/* it's useful give parent a class and makes it easier */
+ul li:hover {
+    background-color: #191919;
+}
+
+p a {
+    color: blue;
+}
+
+#dislikes a{
+    color: red;
+}
+#dislikes a:hover{
+    color: red;
+    text-decoration: line-through red;
+}
+
+/* direct descendant child not that common */
+li > a:hover{
+    color: rgb(119, 113, 113);
+    text-decoration: underline rgb(114, 107, 107);
 }
