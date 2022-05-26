@@ -3,6 +3,7 @@
 * {}  
 
 */
+
 body {
   background-color: #ced0ce;
 }
@@ -23,6 +24,25 @@ h2 {
 input {
   color: teal;
   background-color: antiquewhite;
+}
+
+/* !CHECK MDN for more! */
+/* attribute selector
+every input with a type="password" attribute
+*/
+input[type="password"] {
+  color: red;
+  background-color: antiquewhite;
+}
+
+/* any <a> with href that includes google in it */
+a[href*="google"] {
+  background-color: red;
+}
+
+/* any <a> with href attribute that ends with .org */
+a[href$=".org"] {
+  background-color: orange;
 }
 
 p {
@@ -58,10 +78,6 @@ li {
   color: blue;
 }
 
-.done {
-  color: grey;
-}
-
 #clear {
   background-color: red;
   color: white;
@@ -83,10 +99,10 @@ p a {
 }
 
 #dislikes a {
-  color: red;
+  color: #ff0000;
 }
 #dislikes a:hover {
-  color: red;
+  color: #eb0101;
   text-decoration: line-through red;
 }
 
@@ -94,4 +110,97 @@ p a {
 li > a:hover {
   color: rgb(119, 113, 113);
   text-decoration: underline rgb(114, 107, 107);
+}
+
+/* !!ACTIVE effect */
+button:hover {
+  background-color: aqua;
+}
+button:active {
+  background-color: red;
+}
+
+/* !TODO CHECK PSEUDO CLASSES */
+/* !!!! EVERY OTHER !!!!! */
+/* if i want to select overy for design etc this is perfect */
+.everyOtherTest li:nth-of-type(2n - 1) {
+  background-color: #191919;
+  color: #ced0ce;
+  color: black;
+}
+.everyOtherTest li:nth-of-type(2n - 1):hover {
+  background-color: #fffafa;
+  color: #ced0ce;
+}
+
+/* stuff related to nth square*/
+.square {
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+
+#board {
+  display: flex;
+  margin: 0 auto;
+  width: 500px;
+  flex-wrap: wrap;
+}
+
+/* !TODO Learn how to change all of the board colors */
+#board div.square:nth-of-type(2n-1) {
+  background-color: #da3c1e;
+}
+#board div.square:nth-of-type(2n) {
+  background-color: #000000;
+}
+#board div.square:nth-of-type(2n-1):hover {
+  background-color: #000000;
+}
+#board div.square:nth-of-type(2n):hover {
+  background-color: #da3c1e;
+}
+
+figure > figcaption {
+  text-align: center;
+}
+/* // */
+
+/* Pseudo Elements */
+h2::first-letter {
+  font-size: 70px;
+}
+/* everything selected in this page is purb yellow lol */
+*::selection {
+  background-color: purple;
+  color: rgb(255, 217, 0);
+}
+
+/* doesn't work */
+.checkTest:checked:checked {
+  box-shadow: 0 0 0 3px hotpink;
+}
+#huey:checked {
+  box-shadow: 0 0 0 3px hotpink;
+}
+
+/* Labels for checked inputs */
+input:checked + label {
+  color: red;
+}
+
+/* Specifity calculator https://specificity.keegan.st/ */
+/* TODO: if you have any problem with changes don't apply just go inspect YOU CaN EVEN FORCE APPLY HOVER ETC. */
+/* !important makes auto win the specifity  */
+/* inline also wins auto */
+
+/* Inherit */
+form {
+  color: red;
+}
+/* spesificly inherit */
+button,
+input {
+  color: inherit;
 }

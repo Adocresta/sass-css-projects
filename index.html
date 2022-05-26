@@ -11,9 +11,13 @@
   </head>
   <body>
     <div class="navClass">
+      <span>
+        <a href="Css-box-model.html">GO TO SECOND PAGE</a>
+      </span>
       <span class="searchBar">
         <label for="Search" id="searchbutton">Search:</label>
         <input type="text" placeholder="" id="search" />
+        <input type="password" placeholder="password" />
       </span>
       <button id="button">Log in</button>
       <button id="signupbutton">Sign up</button>
@@ -28,11 +32,12 @@
     </p>
     <!-- div class not working -->
     <div class="testFunctions">
-      <h1>Todos</h1>
-      <ul>
-        <li class="done">Walk Chickens</li>
+      <h2><abbr title="Pseudo Elemets in action">Todos</abbr></h2>
+      <ul class="everyOtherTest">
+        <li>CHECK PSEDOU CLASSES</li>
+        <li>Walk Chickens</li>
         <li>Clean Out Coop</li>
-        <li class="done">Collect Chicken Eggs</li>
+        <li>Collect Chicken Eggs</li>
         <li>Incubate Chicken Eggs</li>
         <li>Hatch New Chickens!</li>
       </ul>
@@ -67,6 +72,78 @@
       <li>
         <a href="#">Buy</a>
       </li>
+      <li>
+        <!-- we are gonna select it with only *google -->
+        <a href="www.google.com">Google</a>
+      </li>
     </ul>
+    <!-- test of checked -->
+    <fieldset>
+      <legend>Select a maintenance drone:</legend>
+
+      <div>
+        <input
+          class="checkTest"
+          type="checkbox"
+          id="huey"
+          name="drone"
+          value="huey"
+        />
+        <label for="huey">Huey</label>
+      </div>
+
+      <div>
+        <input
+          class="checkTest"
+          type="checkbox"
+          id="dewey"
+          name="drone"
+          value="dewey"
+        />
+        <label for="dewey">Dewey</label>
+      </div>
+
+      <div>
+        <input
+          class="checkTest"
+          type="checkbox"
+          id="louie"
+          name="drone"
+          value="louie"
+        />
+        <label for="louie">Louie</label>
+      </div>
+    </fieldset>
+
+    <figure>
+      <div id="board">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+      </div>
+      <figcaption>An example of nth-of-type(2n-1)</figcaption>
+    </figure>
   </footer>
 </html>
