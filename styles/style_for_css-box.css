@@ -1,5 +1,39 @@
+#header {
+  display: none;
+}
+
+section.section {
+  background-color: #84a98c;
+  width: 800px;
+  height: 800px;
+}
+div.div {
+  background-color: #2f3e46;
+  width: 50%;
+  height: 50%;
+}
+
+/* EMs could be useful */
+/* proportions stays the same */
+button.button {
+  font-size: 1em;
+  padding: 0 1em;
+  border-radius: 0.5em;
+  background-color: #52796f;
+  color: #f8edeb;
+}
+
+/* ! DOWNSIDE OF EM in nested stuff */
+#ul {
+  font-size: 1.5em;
+}
+
+/* use rems for something? */
+/* ROOT element font size */
+
 body {
   background-color: grey;
+  margin: 0;
 }
 
 div.searchBar {
@@ -14,12 +48,20 @@ div {
   height: 200px;
 }
 
+/* display rune */
 h1 {
   background-color: pink;
-  width: 100px;
+  width: 150px;
   border: 1px solid black;
   border-radius: 40%;
   text-align: center;
+}
+
+/* !doesn't work because of display property*/
+h1 span {
+  margin-left: 20px;
+  margin-top: 40px;
+  /* display: block; makes it block no more inline */
 }
 
 #one {
@@ -28,6 +70,8 @@ h1 {
   /* exactly 200px border to inside */
   box-sizing: border-box;
   border-radius: 20%;
+  margin-left: 50px;
+  padding: 20px;
 }
 
 #one:hover {
@@ -44,11 +88,14 @@ h1 {
   box-sizing: border-box;
   border-top-left-radius: 10%;
   border-bottom-right-radius: 30%;
+  margin-left: 100px;
+  padding: 30px;
 }
 
 #two:hover {
   background-color: #ffb5a7;
   border: 2px solid black;
+  padding: 50px;
 }
 
 #three {
@@ -83,3 +130,5 @@ h1 {
   font-weight: 700;
   color: #f8edeb;
 }
+
+/* *margin is outside padding is inside spacing */
