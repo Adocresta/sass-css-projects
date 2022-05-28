@@ -4,11 +4,30 @@
 
 */
 
-h1 button {
-  font-size: 100px;
-}
 body {
-  background-color: #ced0ce;
+  font-family: "Grape Nuts", cursive;
+  background-color: #131924;
+}
+
+button {
+  font-family: "Grape Nuts", cursive;
+  width: 6em;
+  font-size: 1em;
+  background: none;
+  border: #f77f00 solid 2px;
+  color: #edf2f4;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  padding-left: 0.08em;
+  padding-left: 0.08em;
+  transition: color 1s, border-color 1s, box-shadow 1s, transform 0.25s;
+}
+
+button:hover {
+  border: #ffc300 solid 2px;
+  transform: translateY(-0.25em);
+  box-shadow: 0px 0.5em 0.5em -0.4em #ffc40054;
+  cursor: pointer;
 }
 
 h1,
@@ -115,12 +134,8 @@ li > a:hover {
   text-decoration: underline rgb(114, 107, 107);
 }
 
-/* !!ACTIVE effect */
-button:hover {
-  background-color: aqua;
-}
 button:active {
-  background-color: red;
+  background-color: rgb(56, 0, 0);
 }
 
 /* !TODO CHECK PSEUDO CLASSES */
@@ -170,6 +185,10 @@ figure > figcaption {
 }
 /* // */
 
+#MediaQuarries {
+  width: 400px;
+  color: #ced0ce;
+}
 /* Pseudo Elements */
 h2::first-letter {
   font-size: 70px;
