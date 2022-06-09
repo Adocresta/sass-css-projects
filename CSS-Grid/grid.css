@@ -26,6 +26,7 @@ body {
   grid-template-columns: 1fr 1fr;
   /* we can also repeat */
   grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   /* gaps between the grid */
   column-gap: 10px;
   row-gap: 10px;
@@ -33,14 +34,14 @@ body {
   gap: 10px;
   /* all of our content is same so rows are equal but if we have lorem on one of them*/
   /* grid auto rows */
-  grid-auto-rows: minmax(200px, auto);
+  /* grid-auto-rows: minmax(200px, auto); */
   /* more custom way is */
-  grid-template-rows: 200px 100px 200px;
+  /* grid-template-rows: 200px 100px 200px; */
   /* we can repeat too*/
   /* ! GRID TEMP ROW is not that common */
 
-  align-items: end;
-  justify-content: end;
+  /* align-items: end;
+  justify-content: end; */
 }
 
 .item {
@@ -51,12 +52,12 @@ body {
   border: skyblue 1px solid;
 }
 
-.item:nth-of-type(2) {
+/* .item:nth-of-type(2) {
   height: 100px;
   width: 100px;
   align-self: center;
   justify-self: center;
-}
+} */
 
 .item:nth-of-type(1) {
   background-color: black;
@@ -72,5 +73,9 @@ body {
 .item:nth-of-type(3) {
   background-color: #333;
   grid-row: 2 / 4;
-  min-height: 300px;
+}
+
+.item:nth-of-type(4) {
+  background-color: #333;
+  grid-row: 2 / 4;
 }
