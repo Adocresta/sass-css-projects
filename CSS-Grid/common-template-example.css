@@ -8,12 +8,17 @@ body {
   font-size: 16px;
   height: 100vh;
   display: grid;
+  /* this way is more simplier than my idea */
   grid-template-areas:
     "header header header"
     "nav content sidebar"
     "nav footer footer";
-  grid-template-columns: 15% 70% 15%;
-  grid-template-rows: 10% 80% 10%;
+  /* grid-template-columns: 15% 70% 15%;
+  grid-template-rows: 10% 80% 10%; */
+
+  grid-template-columns: 1fr 4fr 1fr;
+  /* 1fr takes up the rest? */
+  grid-template-rows: 80px 1fr 70px;
 }
 
 header,
@@ -28,20 +33,25 @@ aside {
 }
 
 header {
-  grid-column: 1/4;
+  /* grid-column: 1/4; */
+  grid-area: header;
 }
 footer {
-  grid-column: 2/4;
+  /* grid-column: 2/4; */
+  grid-area: footer;
 }
 main {
-  grid-column: 2/3;
+  /* grid-column: 2/3; */
+  grid-area: content;
 }
 
 nav {
-  grid-column: 1/1;
-  grid-row: 2/4;
+  /* grid-column: 1/1;
+  grid-row: 2/4; */
+  grid-area: nav;
 }
 aside {
-  grid-column: 3/3;
-  grid-row: 2;
+  /* grid-column: 3/3;
+  grid-row: 2; */
+  grid-area: sidebar;
 }
