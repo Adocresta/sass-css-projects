@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background: #f5f5f5;
+}
+
+.container {
+  max-width: 800px;
+  margin: 10vh auto;
+  padding: 10px;
+  display: grid;
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* wraps like flex wrap */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  /* it wraps as soon as one hits below 200px */
+  gap: 10px;
+}
+
+.item {
+  background-color: steelblue;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  border: skyblue 1px solid;
+}
+
+@media (max-width: 500px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
