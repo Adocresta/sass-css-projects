@@ -1,11 +1,12 @@
 body {
   font-family: "Grape Nuts", cursive;
   background-color: #131924;
+  position: relative;
 }
 
 button {
   font-family: "Grape Nuts", cursive;
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   width: 6em;
