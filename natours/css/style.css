@@ -20,7 +20,7 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: #777;
-  padding: 30px;
+  padding: 2%;
 }
 
 .header {
@@ -50,6 +50,10 @@ body {
   height: 35px;
 }
 
+.logo:hover {
+  animation: moveInRight 0.5s ease-out;
+}
+
 .center-box {
   position: absolute;
   top: 40%;
@@ -64,6 +68,7 @@ body {
   }
 
   80% {
+    transform: translateX(20px);
   }
 
   100% {
@@ -79,6 +84,7 @@ body {
   }
 
   80% {
+    transform: translateX(-20px);
   }
 
   100% {
@@ -90,19 +96,26 @@ body {
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
-  text-align: center;
-}
 
-/* .heading-primary:hover {
-  text-transform: uppercase;
-} */
+  /* fixes shake in the animation */
+  backface-visibility: hidden;
+}
 
 .heading-primary-main {
   display: block;
   letter-spacing: 35px;
   font-size: 60px;
   font-weight: 400;
-  animation: moveInLeft 0.5s;
+
+  /* animation: moveInLeft 0.5s; */
+
+  animation-name: moveInLeft;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+
+  /* animation-delay: 0.5s; */
+  /* animation-iteration-count: infinite; */
+  /* animation-iteration-count: 5; */
 }
 
 .heading-primary-sub {
@@ -110,5 +123,6 @@ body {
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 17px;
-  animation: moveInRight 0.5s;
+
+  animation: moveInRight 0.5s ease-out;
 }
