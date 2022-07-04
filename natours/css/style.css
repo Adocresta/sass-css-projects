@@ -89,6 +89,21 @@ body {
     transform: translateX(0);
   }
 }
+@keyframes moveInButton {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  80% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .heading-primary {
   color: #fff;
@@ -123,7 +138,8 @@ body {
   font-weight: 700;
   letter-spacing: 17px;
 
-  animation: moveInRight 0.5s ease-out;
+  animation: moveInRight 0.5s ease-out 0.25s;
+  animation-fill-mode: backwards;
 }
 
 .btn:link,
@@ -133,7 +149,7 @@ body {
   padding: 15px 40px;
   display: inline-block;
   border-radius: 30px;
-
+  position: relative;
   transition: all 0.2s;
 }
 
@@ -150,4 +166,37 @@ body {
 .btn-white {
   background-color: #fff;
   color: inherit;
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s ease-in;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover:after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+/* Look kind of ridiculous but good to know
+.btn:active::after {
+  transform: scale(1);
+  opacity: 1;
+} */
+
+.btn-animated {
+  animation: moveInButton 0.5s ease-out 0.5s;
+  animation-fill-mode: backwards;
 }
