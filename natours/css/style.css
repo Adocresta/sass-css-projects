@@ -8,46 +8,60 @@ Dark green: #28b485
 */
 
 /* basic universal reset */
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box sizing is not inherited by default! */
+  box-sizing: inherit;
+}
+
+html {
+  /* font-size: 62.5%; */
+  font-size: 50%;
 }
 
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
   line-height: 1.7;
   color: #777;
-  padding: 2%;
+  padding: 3rem;
+
+  box-sizing: border-box;
 }
 
 .header {
-  /* test this 95% */
   height: 95vh;
-  /* min-width: 600px; */
   background-image: linear-gradient(to right bottom, #7ed56fcc, #28b485c4),
     url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
-  clip-path: polygon(0 0, 100% 0%, 100% 75vh, 0 100%);
   position: relative;
+
+  clip-path: polygon(0 0, 100% 0%, 100% 75vh, 0 100%);
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .logo-box {
   /* Learn absolute vs relative */
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 4rem;
+  left: 4rem;
 }
 
 .logo {
-  height: 35px;
-}
-
-.logo:hover {
-  animation: moveInRight 0.5s ease-out;
+  height: 3.5rem;
+  animation: zoomIn 1s ease-in;
 }
 
 .center-box {
@@ -61,47 +75,48 @@ body {
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-10rem);
   }
 
   80% {
-    transform: translateX(20px);
+    transform: translateX(2rem);
   }
 
   100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translate(0);
   }
 }
 
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(10rem);
   }
 
   80% {
-    transform: translateX(-20px);
+    transform: translateX(-2rem);
   }
 
   100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translate(0);
   }
 }
+
 @keyframes moveInButton {
   0% {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(5rem);
   }
 
   80% {
-    transform: translateY(-10px);
+    transform: translateY(-1rem);
   }
 
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(0);
   }
 }
 
@@ -112,13 +127,13 @@ body {
   /* fixes shake in the animation */
   backface-visibility: hidden;
 
-  margin-bottom: 50px;
+  margin-bottom: 6rem;
 }
 
 .heading-primary-main {
   display: block;
-  letter-spacing: 35px;
-  font-size: 60px;
+  letter-spacing: 3.5rem;
+  font-size: 6rem;
   font-weight: 400;
 
   /* animation: moveInLeft 0.5s; */
@@ -134,9 +149,9 @@ body {
 
 .heading-primary-sub {
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 17px;
+  letter-spacing: 1.75rem;
 
   animation: moveInRight 0.5s ease-out 0.25s;
   animation-fill-mode: backwards;
@@ -146,21 +161,22 @@ body {
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
-  padding: 15px 40px;
+  padding: 1.5rem 4rem;
   display: inline-block;
-  border-radius: 30px;
+  border-radius: 3rem;
   position: relative;
   transition: all 0.2s;
+  font-size: 1.6rem;
 }
 
 .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
 .btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .btn-white {
