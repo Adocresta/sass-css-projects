@@ -11,16 +11,32 @@ $color-text-light: #eee;
 
 $width-button: 150px;
 
-.navbar {
-  margin: 30px;
-  background-color: $color-primary;
-
-  // clearfix
+@mixin clearfix {
   &::after {
     content: "";
     clear: both;
     display: table;
   }
+}
+
+// DRY principle don't repeat
+@mixin style-link-text($col) {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $col;
+}
+
+// sass funtions
+@function divide($a, $b) {
+  @return $a/$b;
+}
+
+.navbar {
+  margin: 30px;
+  background-color: $color-primary;
+
+  // clearfix
+  @include clearfix();
 }
 
 .navigation {
@@ -29,39 +45,39 @@ $width-button: 150px;
 
   li {
     display: inline-block;
-    margin-left: 30px;
+    // common practise in sass to just multiply with px or other units
+    margin-left: divide(60, 2) * 1px;
 
     &:first-child {
       margin: 0;
     }
   }
 
-  a:link {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: $color-text-dark;
+  a:link,
+  a:visited {
+    @include style-link-text($color-text-dark);
   }
 }
 
 .buttons {
   float: right;
+  // float: left;
 }
 
-// ? it doesn't work :link pseudo class
-.btn:link,
-.btn:visited {
+// we use EXTEND to use DRY principles again instead of mixin because in the source code it doesn't repeat this time
+%btn-placeholder {
   padding: 10px;
   display: inline-block;
   text-align: center;
   border-radius: 100px;
-  text-decoration: none;
-  text-transform: uppercase;
   width: $width-button;
-  color: $color-text-light;
+  @include style-link-text($color-text-light);
 }
 
 .btn--main {
-  &:link {
+  &:link,
+  &:visited {
+    @extend %btn-placeholder;
     background-color: $color-secondary;
   }
 
@@ -72,6 +88,7 @@ $width-button: 150px;
 
 .btn--hot {
   &:link {
+    @extend %btn-placeholder;
     background-color: $color-tertiary;
   }
   &:hover {
