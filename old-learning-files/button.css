@@ -1,0 +1,53 @@
+body {
+  font-family: "Grape Nuts", cursive;
+  background-color: #131924;
+  position: relative;
+}
+
+button {
+  font-family: "Grape Nuts", cursive;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6em;
+  font-size: 1em;
+  background: none;
+  border: #f77f00 solid 2px;
+  color: #edf2f4;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  padding-left: 0.08em;
+  padding-left: 0.08em;
+  transition: color 1s, border-color 1s, box-shadow 1s, transform 0.25s;
+}
+
+button:hover {
+  border: #ffc300 solid 2px;
+  transform: translateY(-0.25em);
+  box-shadow: 0px 0.5em 0.5em -0.4em #ffc40054;
+  cursor: pointer;
+}
+
+/* #secondButton {
+  font-family: "Grape Nuts", cursive;
+  position: fixed;
+  top: 42.5%;
+  left: 50%;
+  width: 6em;
+  font-size: 1em;
+  background: none;
+  border: #f77f00 solid 2px;
+  color: #edf2f4;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  padding-left: 0.08em;
+  padding-left: 0.08em;
+  transition: color 1s, border-color 1s, box-shadow 1s, transform 0.25s;
+}
+
+button#secondButton:hover {
+  border: #ffc300 solid 2px;
+  transform: translateY(-0.25em);
+  box-shadow: 0px 0.5em 0.5em -0.4em #ffc40054;
+  cursor: pointer;
+} */

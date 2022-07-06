@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+$color-primary: #f9ed69; // yellow color
+$color-secondary: #f08a5d; //orange
+$color-tertiary: #b83b5e;
+
+.navbar {
+  margin: 30px;
+  background-color: $color-primary;
+}
