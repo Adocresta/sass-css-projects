@@ -1,0 +1,22 @@
+{
+  "name": "adocresta-css",
+  "version": "1.0.0",
+  "description": "learning css",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass natours/sass/main.scss natours/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adocresta/adocresta-css-sass-learning.git"
+  },
+  "author": "Adocresta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Adocresta/adocresta-css-sass-learning/issues"
+  },
+  "homepage": "https://github.com/Adocresta/adocresta-css-sass-learning#readme",
+  "devDependencies": {
+    "node-sass": "^7.0.1"
+  }
+}
