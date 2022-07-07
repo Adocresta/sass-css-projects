@@ -4,7 +4,7 @@
   "description": "learning css",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass natours/sass/main.scss natours/css/style.css"
+    "compile:sass": "node-sass natours/sass/main.scss natours/css/style.css -w"
   },
   "repository": {
     "type": "git",

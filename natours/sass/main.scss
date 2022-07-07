@@ -2,6 +2,11 @@ $color-primary: #55c57a;
 $color-primary-light: #7ed56f;
 $color-primary-dark: #28b485;
 
+$color: red;
+$color-grey-dark: #777;
+$color-white: #fff;
+$color-black: #000;
+
 /* basic universal reset */
 *,
 *::after,
@@ -21,7 +26,7 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.7;
-  color: #777;
+  color: $color-white;
   padding: 3rem;
 
   box-sizing: border-box;
@@ -120,7 +125,7 @@ body {
 }
 
 .heading-primary {
-  color: #fff;
+  color: $color-white;
   text-transform: uppercase;
 
   /* fixes shake in the animation */
@@ -156,62 +161,65 @@ body {
   animation-fill-mode: backwards;
 }
 
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  display: inline-block;
-  border-radius: 3rem;
-  position: relative;
-  transition: all 0.2s;
-  font-size: 1.6rem;
-}
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 3rem;
+    position: relative;
+    transition: all 0.2s;
+    font-size: 1.6rem;
+  }
 
-.btn:hover {
-  transform: translateY(-0.3rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-}
+  &:hover {
+    transform: translateY(-0.3rem);
+    // hexedecimal + rgba only possible in sass
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
 
-.btn:active {
-  transform: translateY(-0.1rem);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
+    &:after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
 
-.btn--white {
-  background-color: #fff;
-  color: inherit;
-}
+  &:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
 
-.btn::after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 100px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.4s ease-in;
-}
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
 
-.btn--white::after {
-  background-color: #fff;
-}
+    &::after {
+      background-color: $color-white;
+    }
+  }
 
-.btn:hover:after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
-}
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s ease-in;
+  }
 
-/* Look kind of ridiculous but good to know
-.btn:active::after {
-  transform: scale(1);
-  opacity: 1;
-} */
+  /* Look kind of ridiculous but good to know
+  &:active::after {
+    transform: scale(1);
+    opacity: 1;
+  } */
 
-.btn--animated {
-  animation: moveInButton 0.5s ease-out 0.5s;
-  animation-fill-mode: backwards;
+  &--animated {
+    animation: moveInButton 0.5s ease-out 0.5s;
+    animation-fill-mode: backwards;
+  }
 }
