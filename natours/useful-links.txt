@@ -7,3 +7,16 @@ sudo npm install live-server -g
 code: live-server
 
 hexedecimal + rgba only possible in sass (for box shadows, linear gradients)
+
+>Responsive design principles
+Fluid  Layouts: %,vh,vw | max-width
+Responsive Units: rem
+Flexible Images: % for dimensions | max-width
+Media Queries: 
+
+>Layout Types
+Float: Old way
+Flexbox: One-dimentional row | perfect for component layouts
+CSS gradients: Two-dimentional grid | complex
+
+ // "compile:sass": "node-sass natours/sass/main.scss natours/css/style.css -w",

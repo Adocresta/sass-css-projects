@@ -1,3 +1,4 @@
 # ignore
 /node_modules
+# ignore css but doesn't work!
 /natours/css
