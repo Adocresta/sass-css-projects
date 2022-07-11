@@ -1,0 +1,10 @@
+Download Linea.io free outline icon set
+
+Use
+    ->ICONFONT
+    ->SVGs(advanced)
+
+Include font and style.css folder into the project
+link it to html file
+
+
