@@ -4,27 +4,36 @@
   -moz-perspective: 150rem;
   position: relative;
   @include clearfix();
+  height: 50rem;
 
   &__side {
     background-color: orangered;
     color: white;
     font-size: 2rem;
     height: 50rem;
-    transition: all 0.8s;
+    transition: all 0.8s ease-in-out;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     backface-visibility: hidden;
-
+    border-radius: 0.3rem;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
     &--front {
-      background-color: orangered;
+      background-color: $color-white;
     }
 
     &--back {
-      background-color: green;
       transform: rotateY(180deg);
       z-index: -1;
+
+      &-1 {
+        background-image: linear-gradient(
+          to bottom right,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
     }
   }
 
