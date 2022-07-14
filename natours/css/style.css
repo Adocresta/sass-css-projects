@@ -234,6 +234,21 @@ body {
   -moz-perspective: 150rem;
   position: relative;
   height: 50rem; }
+  .card__header {
+    font-size: 3rem;
+    color: #fff;
+    text-transform: uppercase;
+    position: absolute;
+    right: 1rem;
+    top: 17%;
+    z-index: 10; }
+    .card__header--main {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.7), rgba(255, 119, 48, 0.7));
+      display: inline-block;
+      transform: translateX(3rem) translateY(1.2rem); }
+    .card__header--sub {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.9), rgba(255, 119, 48, 0.9));
+      display: block; }
   .card__side {
     background-color: orangered;
     color: white;
@@ -249,6 +264,28 @@ body {
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
     .card__side--front {
       background-color: #fff; }
+      .card__side--front--imagebox {
+        background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.5), rgba(255, 119, 48, 0.8)), url(../img/nat-5.jpg);
+        clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 100%);
+        background-size: cover;
+        background-position: top;
+        position: relative;
+        height: 20rem; }
+      .card__side--front--tour-features {
+        font-size: 1.6rem;
+        color: #000;
+        margin-top: 3rem;
+        margin-bottom: 3rem; }
+        .card__side--front--tour-features-li {
+          text-transform: capitalize;
+          list-style: none;
+          text-align: center;
+          margin-left: 4rem;
+          margin-right: 4rem;
+          padding-top: 1rem; }
+          .card__side--front--tour-features-li:not(:last-child) {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+            padding-bottom: 1rem; }
     .card__side--back {
       transform: rotateY(180deg);
       z-index: -1; }

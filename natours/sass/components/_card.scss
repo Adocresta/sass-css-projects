@@ -7,6 +7,33 @@
   // @include clearfix();
   height: 50rem;
 
+  &__header {
+    font-size: 3rem;
+    color: $color-white;
+    text-transform: uppercase;
+    position: absolute;
+    right: 1rem;
+    top: 17%;
+    z-index: 10;
+    &--main {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.7),
+        rgba($color-secondary-dark, 0.7)
+      );
+      display: inline-block;
+      transform: translateX(3rem) translateY(1.2rem);
+    }
+    &--sub {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.9),
+        rgba($color-secondary-dark, 0.9)
+      );
+      display: block;
+    }
+  }
+
   &__side {
     background-color: orangered;
     color: white;
@@ -21,8 +48,43 @@
     backface-visibility: hidden;
     border-radius: 0.3rem;
     box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
     &--front {
       background-color: $color-white;
+
+      &--imagebox {
+        background-image: linear-gradient(
+            to right bottom,
+            rgba($color-secondary-light, 0.5),
+            rgba($color-secondary-dark, 0.8)
+          ),
+          url(../img/nat-5.jpg);
+        clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 100%);
+        background-size: cover;
+        background-position: top;
+        position: relative;
+        height: 20rem;
+      }
+
+      &--tour-features {
+        font-size: 1.6rem;
+        color: $color-black;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+
+        &-li {
+          text-transform: capitalize;
+          list-style: none;
+          text-align: center;
+          margin-left: 4rem;
+          margin-right: 4rem;
+          padding-top: 1rem;
+          &:not(:last-child) {
+            border-bottom: 1px solid rgba($color-black, 0.15);
+            padding-bottom: 1rem;
+          }
+        }
+      }
     }
 
     &--back {
