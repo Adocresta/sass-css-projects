@@ -3,7 +3,8 @@
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  @include clearfix();
+  // !! clearfix doesn't work we need to specify the height again
+  // @include clearfix();
   height: 50rem;
 
   &__side {
@@ -11,11 +12,12 @@
     color: white;
     font-size: 2rem;
     height: 50rem;
-    transition: all 0.8s ease-in-out;
+    transition: transform 0.8s ease;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    // fixes animation bug
     backface-visibility: hidden;
     border-radius: 0.3rem;
     box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
@@ -38,7 +40,7 @@
   }
 
   &:hover &__side--front {
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg);
   }
 
   &:hover &__side--back {
