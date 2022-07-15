@@ -1,4 +1,5 @@
 .card {
+  // *FUNCTIONALITY
   // gives a nice rotate effect
   perspective: 150rem;
   -moz-perspective: 150rem;
@@ -7,7 +8,51 @@
   // @include clearfix();
   height: 50rem;
 
-  &__header {
+  &__side {
+    background-color: orangered;
+    color: white;
+    font-size: 2rem;
+    height: 50rem;
+    transition: transform 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    // fixes animation bug
+    backface-visibility: hidden;
+    border-radius: 0.3rem;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+      z-index: -1;
+
+      &-1 {
+        background-image: linear-gradient(
+          to bottom right,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+    z-index: 1;
+  }
+
+  // *FRONT SIDE STYLING
+  &__heading {
     font-size: 3rem;
     color: $color-white;
     text-transform: uppercase;
@@ -34,79 +79,43 @@
     }
   }
 
-  &__side {
-    background-color: orangered;
-    color: white;
-    font-size: 2rem;
-    height: 50rem;
-    transition: transform 0.8s ease;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    // fixes animation bug
-    backface-visibility: hidden;
-    border-radius: 0.3rem;
-    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+  &__imagebox {
+    clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 100%);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    height: 20rem;
+    // you can also do it in photoshop but css is powerful
+    background-blend-mode: screen;
 
-    &--front {
-      background-color: $color-white;
-
-      &--imagebox {
-        background-image: linear-gradient(
-            to right bottom,
-            rgba($color-secondary-light, 0.5),
-            rgba($color-secondary-dark, 0.8)
-          ),
-          url(../img/nat-5.jpg);
-        clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 100%);
-        background-size: cover;
-        background-position: top;
-        position: relative;
-        height: 20rem;
-      }
-
-      &--tour-features {
-        font-size: 1.6rem;
-        color: $color-black;
-        margin-top: 3rem;
-        margin-bottom: 3rem;
-
-        &-li {
-          text-transform: capitalize;
-          list-style: none;
-          text-align: center;
-          margin-left: 4rem;
-          margin-right: 4rem;
-          padding-top: 1rem;
-          &:not(:last-child) {
-            border-bottom: 1px solid rgba($color-black, 0.15);
-            padding-bottom: 1rem;
-          }
-        }
-      }
-    }
-
-    &--back {
-      transform: rotateY(180deg);
-      z-index: -1;
-
-      &-1 {
-        background-image: linear-gradient(
-          to bottom right,
+    // Cards by number
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
           $color-secondary-light,
           $color-secondary-dark
-        );
-      }
+        ),
+        url(../img/nat-5.jpg);
     }
   }
 
-  &:hover &__side--front {
-    transform: rotateY(-180deg);
-  }
+  &__features {
+    font-size: 1.6rem;
+    color: $color-black;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 
-  &:hover &__side--back {
-    transform: rotateY(0);
-    z-index: 1;
+    &--li {
+      text-transform: capitalize;
+      list-style: none;
+      text-align: center;
+      margin-left: 4rem;
+      margin-right: 4rem;
+      padding-top: 1rem;
+      &:not(:last-child) {
+        border-bottom: 1px solid rgba($color-black, 0.15);
+        padding-bottom: 1rem;
+      }
+    }
   }
 }
