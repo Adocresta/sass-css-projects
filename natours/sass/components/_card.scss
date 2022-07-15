@@ -9,8 +9,6 @@
   height: 50rem;
 
   &__side {
-    background-color: orangered;
-    color: white;
     font-size: 2rem;
     height: 50rem;
     transition: transform 0.8s ease;
@@ -21,6 +19,7 @@
     // fixes animation bug
     backface-visibility: hidden;
     border-radius: 0.3rem;
+    // prevents stuff that ruins border radius
     overflow: hidden;
     box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
 
@@ -53,33 +52,56 @@
 
   // *FRONT SIDE STYLING
   &__heading {
-    font-size: 3rem;
+    // font
+    font-size: 2.8rem;
+    font-weight: 300;
     color: $color-white;
     text-transform: uppercase;
+    text-align: right;
+
+    // positioning
     position: absolute;
     right: 1rem;
     top: 17%;
     z-index: 10;
-    &--main {
+    width: 55%;
+
+    // &--main {
+    //   background-image: linear-gradient(
+    //     to right bottom,
+    //     rgba($color-secondary-light, 0.7),
+    //     rgba($color-secondary-dark, 0.7)
+    //   );
+    //   display: inline-block;
+    //   transform: translateY(1.2rem);
+    // }
+    // &--sub {
+    //   background-image: linear-gradient(
+    //     to right bottom,
+    //     rgba($color-secondary-light, 0.9),
+    //     rgba($color-secondary-dark, 0.9)
+    //   );
+    //   display: block;
+    // }
+  }
+
+  &__heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+
+    &--1 {
       background-image: linear-gradient(
         to right bottom,
-        rgba($color-secondary-light, 0.7),
-        rgba($color-secondary-dark, 0.7)
+        rgba($color-secondary-light, 0.85),
+        rgba($color-secondary-dark, 0.85)
       );
-      display: inline-block;
-      transform: translateX(3rem) translateY(1.2rem);
-    }
-    &--sub {
-      background-image: linear-gradient(
-        to right bottom,
-        rgba($color-secondary-light, 0.9),
-        rgba($color-secondary-dark, 0.9)
-      );
-      display: block;
     }
   }
 
   &__imagebox {
+    // for the compatibility
+    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 100%);
     clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 100%);
     background-size: cover;
     background-position: top;

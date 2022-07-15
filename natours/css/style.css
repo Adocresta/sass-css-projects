@@ -235,8 +235,6 @@ body {
   position: relative;
   height: 50rem; }
   .card__side {
-    background-color: orangered;
-    color: white;
     font-size: 2rem;
     height: 50rem;
     transition: transform 0.8s ease;
@@ -261,21 +259,24 @@ body {
     transform: rotateY(0);
     z-index: 1; }
   .card__heading {
-    font-size: 3rem;
+    font-size: 2.8rem;
+    font-weight: 300;
     color: #fff;
     text-transform: uppercase;
+    text-align: right;
     position: absolute;
     right: 1rem;
     top: 17%;
-    z-index: 10; }
-    .card__heading--main {
-      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.7), rgba(255, 119, 48, 0.7));
-      display: inline-block;
-      transform: translateX(3rem) translateY(1.2rem); }
-    .card__heading--sub {
-      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.9), rgba(255, 119, 48, 0.9));
-      display: block; }
+    z-index: 10;
+    width: 55%; }
+  .card__heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone; }
+    .card__heading-span--1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
   .card__imagebox {
+    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 100%);
     clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 100%);
     background-size: cover;
     background-position: top;
@@ -306,6 +307,7 @@ body {
   background-size: cover;
   background-position: top;
   position: relative;
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0%, 100% 75vh, 0 100%); }
   .header__logo-box {
     /* Learn absolute vs relative */
