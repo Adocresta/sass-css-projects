@@ -53,7 +53,7 @@
   // *FRONT SIDE STYLING
   &__heading {
     // font
-    font-size: 2.8rem;
+    font-size: 2.2rem;
     font-weight: 300;
     color: $color-white;
     text-transform: uppercase;
@@ -62,7 +62,7 @@
     // positioning
     position: absolute;
     right: 1rem;
-    top: 17%;
+    top: 23%;
     z-index: 10;
     width: 55%;
 
@@ -106,7 +106,7 @@
     background-size: cover;
     background-position: top;
     position: relative;
-    height: 20rem;
+    height: 21rem;
     // you can also do it in photoshop but css is powerful
     background-blend-mode: screen;
 
@@ -122,21 +122,18 @@
   }
 
   &__features {
-    font-size: 1.6rem;
-    color: $color-black;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    width: 80%;
+    list-style: none;
+    margin: 0 auto;
+    padding: 3rem;
 
     &--li {
+      font-size: 1.5rem;
       text-transform: capitalize;
-      list-style: none;
       text-align: center;
-      margin-left: 4rem;
-      margin-right: 4rem;
-      padding-top: 1rem;
+      padding: 1rem 0 1rem;
       &:not(:last-child) {
-        border-bottom: 1px solid rgba($color-black, 0.15);
-        padding-bottom: 1rem;
+        border-bottom: 1px solid $color-grey-light-2;
       }
     }
   }
