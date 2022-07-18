@@ -1,28 +1,48 @@
 .story {
-  // *positioning
   @include clearfix();
-  background-color: rgba($color-white, 0.6);
-  //   border: 1px solid $color-grey-light-1;
-  border-radius: 0.3rem;
-  width: 60%;
+
+  // *positioning
+  width: 75%;
   padding: 5rem;
   margin: 0 auto;
   &:not(:last-child) {
     margin-bottom: 6rem;
   }
-
   transform: skewX(-10deg);
-  & > * {
-    transform: skewX(10deg);
-  }
+
+  // *styling
+  border-radius: 0.3rem;
+  background-color: rgba($color-white, 0.6);
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+
+  // *font
+  font-size: $default-font-size;
 
   //Image
   &__image-box {
+    width: 15rem;
+    height: 15rem;
+    // background-color: orangered;
+    float: left;
+
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+
+    // because already have 1 transform here & > * doesn't work
+    transform: translateX(-2rem) skewX(10deg);
+    // best way for floats just use transform
   }
 
   &__image {
-    width: 12rem;
-    height: 12rem;
-    border-radius: 400px;
+    // width: 100%;
+    height: 100%;
+  }
+
+  &__text {
+    // we skew here instead cuz & > * doesn't work
+    transform: skewX(10deg);
   }
 }
